@@ -7,12 +7,12 @@
 
 Поля:
 
-int num_tr                     номер трудовой книжки
-char name_surname[LEN]         имя и фамилия
-char dolzh[LEN]                должность
-int hours                      кол-во рабочих часов
-int zarpl                      зарплата в месяц в рублях
-int progools                   кол-во прогулов (в днях)
+private int num_tr                     номер трудовой книжки
+private String name_surname            имя и фамилия
+private String dolzh                   должность
+private int hours                      кол-во рабочих часов
+private int zarpl                      зарплата в месяц в рублях
+private int progools                   кол-во прогулов (в днях)
 
 Методы:
 
@@ -44,11 +44,11 @@ char* get_dol()
 Класс: Reserve (заповедник) (будет вызывать класс Worker)
 
 Поля:
-char title[LEN]     название заповедника
-int budget          бюджет заповедника
-int expens          расходы
-int kolvow          кол-во работников в заповеднике
-Worker workers[LEN]  работники заповедника
+private String title        название заповедника
+private int budget          бюджет заповедника
+private int expens          расходы
+private int kolvow          кол-во работников в заповеднике
+private Worker workers[LEN]  работники заповедника
 
 Методы:
 
