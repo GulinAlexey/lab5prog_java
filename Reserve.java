@@ -22,7 +22,7 @@ public class Reserve {
 			this.workers[i]=works[i];
 	}
 	
-	public Display() //вывод
+	public void Display() //вывод
 	{
 		System.out.printf("\nOutput info about reserve.\n");
 		System.out.println("Title: " + title);
@@ -42,7 +42,25 @@ public class Reserve {
 		}
 	}
 	
-	public Read()
+	public void Read() //ввод
+	{
+		Scanner in = new Scanner(System.in);
+		System.out.printf("\nInput info about reserve.\n");
+		System.out.printf("Input title: ");
+		this.title=in.nextLine();
+		System.out.printf("Input budget: ");
+		this.budget=in.nextInt();
+		System.out.printf("Input expenses: ");
+		this.expens=in.nextInt();
+		System.out.printf("Input count of workers: ");
+		this.kolvow=in.nextInt();
+		int n_k = this.kolvow;
+		for(int i=0; i<n_k; i++)
+			this.workers[i].Read();
+		
+	}
+	
+	public Add() //сложение
 	{
 	}
 }
