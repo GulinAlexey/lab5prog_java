@@ -96,4 +96,20 @@ public class Worker {
 		System.out.printf("Input progools: ");
 		progools=in.nextInt();
 	}
+	
+	public void Display() //вывод
+	{
+		System.out.printf("\nOutput info about worker.\n");
+		System.out.println("Num of workbook: " + num_tr);
+		System.out.println("Name and surname: " + name_surname);
+		System.out.println("Dolzhnost: " + dolzh);
+		System.out.println("Work hours: " + hours);
+		System.out.println("Zarplata: " + zarpl);
+		System.out.println("Progools: " + progools);
+
+	}
+	
+	public void Add(Worker w1, Worker w2)
+	{
+	}
 }
