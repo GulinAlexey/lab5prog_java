@@ -109,7 +109,14 @@ public class Worker {
 
 	}
 	
-	public void Add(Worker w1, Worker w2)
+	public void Add(Worker wr1, Worker wr2) //сложение
 	{
+		Worker wrsum = new Worker(12345, "No Name", "No Prof", 0, 0, 0);
+		wrsum=wr1;
+		wrsum.hours+=wr2.hours; //прибавить к имеющимся числовым переменным суммарного объекта значения из второго объекта (кроме номера трудовой)
+		wrsum.zarpl+=wr2.zarpl;
+		wrsum.progools+=wr2.progools;
+		this.Init(wrsum.num_tr, wrsum.name_surname, wrsum.dolzh, wrsum.hours, wrsum.zarpl, wrsum.progools); //вернуть итоговый объект как результат
 	}
+	
 }
