@@ -1,6 +1,3 @@
-package rsrv;
-import wrk.Worker;
-
 import java.util.Scanner; //для использования функций ввода
 
 public class Reserve {
@@ -20,6 +17,17 @@ public class Reserve {
 		this.kolvow=kolv;
 		for(int i=0; i<kolv; i++)
 			this.workers[i]=works[i];
+	}
+	
+	//конструктор с параметрами (вторая перегрузка)
+	public Reserve(String titl, int budg, int exp, int kolv, Worker works)
+	{
+		this.title=titl;
+		this.budget=budg;
+		this.expens=exp;
+		this.kolvow=kolv;
+		for(int i=0; i<kolv; i++)
+			this.workers[i]=works;
 	}
 	
 	//инициализация
@@ -43,7 +51,7 @@ public class Reserve {
 		int n = this.kolvow; //получить кол-во работников
 		for(int i=0; i<n; i++)
 		{
-			System.out.printf("\nРаботник %d\n", i+1);
+			System.out.printf("\nWorker %d\n", i+1);
 			System.out.println("Num of workbook: " + workers[i].get_num());
 			System.out.println("Name and surname: " + workers[i].get_name());
 			System.out.println("Dolzhnost: " + workers[i].get_dol());

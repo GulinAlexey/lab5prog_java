@@ -1,5 +1,3 @@
-package wrk;
-
 import java.util.Scanner; //для использования функций ввода
 
 public class Worker {
