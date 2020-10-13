@@ -80,4 +80,28 @@ public class Reserve {
 		rsum.kolvow+=r2.kolvow;
 		this.Init(rsum.title, rsum.budget, rsum.expens, rsum.kolvow, rsum.workers); //вернуть итоговый объект как результат
 	}
+	
+	public void ZarplChange() //изменение зарплаты всех (прикладное)
+	{
+		Scanner in = new Scanner(System.in);
+		System.out.printf("\nChanging zarplata of all workers\n");
+		System.out.printf("Input changes of zarplata: ");
+		int izm; //переменная с прибавкой или убавкой
+		izm=in.nextInt();
+		int n = this.kolvow; //получить кол-во работников
+		for(int i=0; i<n; i++)
+		{
+			this.workers[i].set_z(this.workers[i].get_z()+izm); //добавить изменение к текущему
+		}
+	}
+	
+	public void BudgChange() //изменение бюджета (прикладное)
+	{
+		Scanner in = new Scanner(System.in);
+		System.out.printf("\nChanging budget of reserve\n");
+		System.out.printf("Input changes of budget: ");
+		int izm; //переменная с прибавкой или убавкой
+		izm=in.nextInt();
+		this.budget+=izm; //добавить изменение к текущему
+	}
 }
