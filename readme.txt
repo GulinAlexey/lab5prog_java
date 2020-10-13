@@ -16,28 +16,27 @@ private int progools                   кол-во прогулов (в днях
 
 Методы:
 
-Worker()                                               конструктор без параметров
-~Worker()                                              деструктор
-void Init(int num_trud, const char* name_sur, const char* dolzhno, int hourss, int zarplat, int progoo)  Инициализация
-void Display()                                         вывод
-void Read()                                            ввод
-void Add(Worker wr1, Worker wr2)                       сложение
-void Obnul()                                           обнуление прогулов (прикладное)
-void Izm_zarpl()                                       изменение зарплаты (прикладное)
+public Worker(int num_trud, String name_sur, String dolzhno, int hourss, int zarplat, int progoo)         конструктор с параметрами
+public void Init(int num_trud, String name_sur, String dolzhno, int hourss, int zarplat, int progoo)  Инициализация
+public void Display()                                         вывод
+public void Read()                                            ввод
+public void Add(Worker wr1, Worker wr2)                       сложение
+public void Obnul()                                           обнуление прогулов (прикладное)
+public void Izm_zarpl()                                       изменение зарплаты (прикладное)
 
           Получение и установление соответствующих полей
-void set_num(int num)
-int get_num()
-void set_h(int h)
-int get_h()
-void set_z(int z)
-int get_z()
-void set_prog(int prog)
-int get_prog()
-void set_name(char* nam)
-char* get_name()
-void set_dol(char* dol)
-char* get_dol()
+public void set_num(int num)
+public int get_num()
+public void set_h(int h)
+public int get_h()
+public void set_z(int z)
+public int get_z()
+public void set_prog(int prog)
+public int get_prog()
+public void set_name(String nam)
+public String get_name()
+public void set_dol(String dol)
+public String get_dol()
 
 
 //////////////////////////////////////////
@@ -52,11 +51,11 @@ private Worker workers[LEN]  работники заповедника
 
 Методы:
 
-Reserve()                                                        конструктор без параметров
-~Reserve()                                                       деструктор
-void Init(const char* titl, int budg, int exp, int kolv, Worker works[LEN])          Конструктор с параметрами (выполняет инициализацию)
-void Display()                                                   вывод
-void Read()                                                      ввод
-void Add(Reserve r1, Reserve r2)                                 сложение
-void ZarplChange()                                               изменение зарплаты всех работников (прикладное)
-void BudgChange()                                                изменение бюджета (прикладное)
+public Reserve(String titl, int budg, int exp, int kolv, Worker[] works)              конструктор с параметрами
+public void Init(String titl, int budg, int exp, int kolv, Worker[] works)          Инициализация
+public Reserve(String titl, int budg, int exp, int kolv, Worker works)                  Конструктор с параметрами (выполняет инициализацию, вторая перегрузка)
+public void Display()                                                   вывод
+public void Read()                                                      ввод
+public void Add(Reserve r1, Reserve r2)                                 сложение
+public void ZarplChange()                                               изменение зарплаты всех работников (прикладное)
+public void BudgChange()                                                изменение бюджета (прикладное)
