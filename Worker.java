@@ -96,6 +96,7 @@ public class Worker {
 		num_tr=in.nextInt();
 		System.out.printf("Input name and surname: ");
 		name_surname=in.nextLine();
+		name_surname=in.nextLine();
 		System.out.printf("Input dolzhnost: ");
 		dolzh=in.nextLine();
 		System.out.printf("Input work hours: ");
