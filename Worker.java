@@ -1,6 +1,6 @@
 package wrk;
 
-import java.util.Scanner;
+import java.util.Scanner; //для использования функций ввода
 
 public class Worker {
 	private int num_tr=0; //номер трудовой книжки
@@ -18,7 +18,7 @@ public class Worker {
 		this.dolzh=dolzhno;
 		this.hours=hourss;
 		this.zarpl=zarplat;
-		this.progools-progoo;
+		this.progools=progoo;
 	}
 	
 	//инициализация
@@ -29,7 +29,7 @@ public class Worker {
 		this.dolzh=dolzhno;
 		this.hours=hourss;
 		this.zarpl=zarplat;
-		this.progools-progoo;
+		this.progools=progoo;
 	}
 	
 	//Получение и установление соответствующих полей

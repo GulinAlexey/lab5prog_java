@@ -1,7 +1,7 @@
 package rsrv;
-import wrk.*;
+import wrk.Worker;
 
-import java.util.Scanner;
+import java.util.Scanner; //для использования функций ввода
 
 public class Reserve {
 	private static final int LEN = 100; //макс. число работников заповедника
