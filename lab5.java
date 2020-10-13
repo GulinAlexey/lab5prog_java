@@ -1,3 +1,6 @@
+import wrk.Worker;
+import rsrv.Reserve;
+
 import java.util.Scanner;
 
 public class lab5

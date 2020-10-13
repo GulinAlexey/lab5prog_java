@@ -1,3 +1,6 @@
+package rsrv;
+import wrk.*;
+
 import java.util.Scanner;
 
 public class Reserve {
