@@ -21,6 +21,17 @@ public class Worker {
 		this.progools-progoo;
 	}
 	
+	//инициализация
+	public void Init(int num_trud, String name_sur, String dolzhno, int hourss, int zarplat, int progoo)
+	{
+		this.num_tr=num_trud;
+		this.name_surname=name_sur;
+		this.dolzh=dolzhno;
+		this.hours=hourss;
+		this.zarpl=zarplat;
+		this.progools-progoo;
+	}
+	
 	//Получение и установление соответствующих полей
 	public void set_num(int num)
 	{

@@ -22,6 +22,17 @@ public class Reserve {
 			this.workers[i]=works[i];
 	}
 	
+	//инициализация
+	public void Init(String titl, int budg, int exp, int kolv, Worker[] works)
+	{
+		this.title=titl;
+		this.budget=budg;
+		this.expens=exp;
+		this.kolvow=kolv;
+		for(int i=0; i<kolv; i++)
+			this.workers[i]=works[i];
+	}
+	
 	public void Display() //вывод
 	{
 		System.out.printf("\nOutput info about reserve.\n");
@@ -60,7 +71,13 @@ public class Reserve {
 		
 	}
 	
-	public Add() //сложение
+	public void Add(Reserve r1, Reserve r2) //сложение
 	{
+		Reserve rsum;
+		rsum=r1; //переписать первую структуру в суммарную структуру
+		rsum.budget+=r2.budget; //прибавить к имеющимся числовым переменным суммарной структуры значения из второй структуры
+		rsum.expens+=r2.expens;
+		rsum.kolvow+=r2.kolvow;
+		this.Init(rsum.title, rsum.budget, rsum.expens, rsum.kolvow, rsum.workers); //вернуть итоговый объект как результат
 	}
 }
