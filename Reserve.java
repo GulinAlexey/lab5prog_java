@@ -10,4 +10,39 @@ public class Reserve {
 	private int expens=0;          //расходы
 	private int kolvow=0;         //кол-во работников в заповеднике
 	private Worker[] workers = new Worker[LEN]; //работники заповедника
+	
+	//конструктор с параметрами
+	public Reserve(String titl, int budg, int exp, int kolv, Worker[] works)
+	{
+		this.title=titl;
+		this.budget=budg;
+		this.expens=exp;
+		this.kolvow=kolv;
+		for(int i=0; i<kolv; i++)
+			this.workers[i]=works[i];
+	}
+	
+	public Display() //вывод
+	{
+		System.out.printf("\nOutput info about reserve.\n");
+		System.out.println("Title: " + title);
+		System.out.println("Budget: " + budget);
+		System.out.println("Expenses: " + expens);
+		System.out.println("Count of workers: " + kolvow);
+		int n = this.kolvow; //получить кол-во работников
+		for(int i=0; i<n; i++)
+		{
+			System.out.printf("\nРаботник %d\n", i+1);
+			System.out.println("Num of workbook: " + workers[i].get_num());
+			System.out.println("Name and surname: " + workers[i].get_name());
+			System.out.println("Dolzhnost: " + workers[i].get_dol());
+			System.out.println("Work hours: " + workers[i].get_h());
+			System.out.println("Zarplata: " + workers[i].get_z());
+			System.out.println("Progools: " + workers[i].get_prog());
+		}
+	}
+	
+	public Read()
+	{
+	}
 }
