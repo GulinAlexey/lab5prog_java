@@ -77,4 +77,23 @@ public class Worker {
 	{
 		return this.dolzh;
 	}
+	
+	public void Read() //ввод
+	{
+		Scanner in = new Scanner(System.in);
+		Worker w1 = new Worker(12345, "No Name", "No Prof", 0, 0, 0);
+		System.out.printf("\nInput info about worker.\n");
+		System.out.printf("Input num of workbook: ");
+		num_tr=in.nextInt();
+		System.out.printf("Input name and surname: ");
+		name_surname=in.nextLine();
+		System.out.printf("Input dolzhnost: ");
+		dolzh=in.nextLine();
+		System.out.printf("Input work hours: ");
+		hours=in.nextInt();
+		System.out.printf("Input zarplata: ");
+		zarpl=in.nextInt();
+		System.out.printf("Input progools: ");
+		progools=in.nextInt();
+	}
 }
