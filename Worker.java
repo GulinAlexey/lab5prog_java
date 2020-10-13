@@ -119,4 +119,19 @@ public class Worker {
 		this.Init(wrsum.num_tr, wrsum.name_surname, wrsum.dolzh, wrsum.hours, wrsum.zarpl, wrsum.progools); //вернуть итоговый объект как результат
 	}
 	
+	//обнуление прогулов (прикладное)
+	public void Obnul()
+	{
+		this.progools=0; //обнулить прогулы
+	}
+
+	public void Izm_zarpl() //изменение зарплаты (прикладное)
+	{
+		Scanner in = new Scanner(System.in);
+		System.out.printf("\nChanging zarplata of worker\n");
+		System.out.printf("Input changes of zarplata: ");
+		int izm; //переменная с прибавкой или убавкой зарплаты
+		izm=in.nextInt();
+		this.zarpl+=izm; //добавить изменение к текущей зарплате
+	}
 }
