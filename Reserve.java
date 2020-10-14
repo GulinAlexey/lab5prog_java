@@ -63,7 +63,7 @@ public class Reserve {
 	
 	public void Read() //ввод
 	{
-		Scanner in = new Scanner(System.in, "cp866");
+		Scanner in = new Scanner(System.in);
 		System.out.printf("\nInput info about reserve.\n");
 		System.out.printf("Input title: ");
 		this.title=in.nextLine();
@@ -91,7 +91,7 @@ public class Reserve {
 	
 	public void ZarplChange() //изменение зарплаты всех (прикладное)
 	{
-		Scanner in = new Scanner(System.in, "cp866");
+		Scanner in = new Scanner(System.in);
 		System.out.printf("\nChanging zarplata of all workers\n");
 		System.out.printf("Input changes of zarplata: ");
 		int izm; //переменная с прибавкой или убавкой
@@ -105,7 +105,7 @@ public class Reserve {
 	
 	public void BudgChange() //изменение бюджета (прикладное)
 	{
-		Scanner in = new Scanner(System.in, "cp866");
+		Scanner in = new Scanner(System.in);
 		System.out.printf("\nChanging budget of reserve\n");
 		System.out.printf("Input changes of budget: ");
 		int izm; //переменная с прибавкой или убавкой
