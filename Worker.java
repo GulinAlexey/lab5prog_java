@@ -89,7 +89,7 @@ public class Worker {
 	
 	public void Read() //ввод
 	{
-		Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in, "cp866");
 		Worker w1 = new Worker(12345, "No Name", "No Prof", 0, 0, 0);
 		System.out.printf("\nInput info about worker.\n");
 		System.out.printf("Input num of workbook: ");
@@ -137,7 +137,7 @@ public class Worker {
 
 	public void Izm_zarpl() //изменение зарплаты (прикладное)
 	{
-		Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in, "cp866");
 		System.out.printf("\nChanging zarplata of worker\n");
 		System.out.printf("Input changes of zarplata: ");
 		int izm; //переменная с прибавкой или убавкой зарплаты
