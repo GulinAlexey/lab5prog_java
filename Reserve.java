@@ -2,6 +2,7 @@ import java.util.Scanner; //для использования функций в�
 
 public class Reserve {
 	private static final int LEN = 100; //макс. число работников заповедника
+	private static final double BLAGO = 0.1; //отчисления на благотворительность (в процентах)
 	private String title;  //название заповедника
 	private int budget=0;          //бюджет заповедника
 	private int expens=0;          //расходы
@@ -111,5 +112,27 @@ public class Reserve {
 		int izm; //переменная с прибавкой или убавкой
 		izm=in.nextInt();
 		this.budget+=izm; //добавить изменение к текущему
+	}
+	
+	public void blagotvor(Blag blg) //кол-во отчислений на благотворительность
+	{
+		blg.blaga=(int)(expens*BLAGO);
+	}
+	
+	public void found_name_surname(String names_surnames) //поиск по имени и фамилии (обработка строк)
+	{
+		int rez=0;
+		for(int i=0; i<kolvow; i++)
+		{
+			if( names_surnames.equals(workers[i].get_name())) //сравнить строки на идентичность
+			{
+				System.out.printf("\nWorker found.\n");
+				rez=1;
+			}
+		}
+		if(rez==0)
+		{
+			System.out.printf("\nWorker didn't found.\n");
+		}
 	}
 }
