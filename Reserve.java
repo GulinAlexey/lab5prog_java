@@ -145,4 +145,20 @@ public class Reserve {
 			System.out.printf("\nWorker didn't found.\n");
 		}
 	}
+	
+	public static void sravn_kolvow(Reserve r1, Reserve r2) //сравнить два заповедника по кол-ву работников (статический метод) (для лаб. 8)
+	{
+		if(r1.get_kolvo()>r2.get_kolvo())
+		{
+			System.out.printf("More workers in first reserve.\n");
+		}
+		else if (r1.get_kolvo()==r2.get_kolvo())
+		{
+			System.out.printf("Counts of workers in reserves are equal.\n");
+		}
+		else
+		{
+			System.out.printf("More workers in second reserve.\n");
+		}
+	}
 }
