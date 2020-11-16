@@ -18,10 +18,18 @@ public class lab5
 		res1.BudgChange();
 		res1.Display();
 		
-		Blag b = new Blag(); //отчисления на благотворительность
-		res1.blagotvor(b);
-		double b2 = b.blaga;
-		System.out.println("Reserve's charity is " +b2);
+		double nal; //налоговые отчисления
+		res1.nal_otchisl(nal);
+		System.out.println("Reserve's tax deductions is " + nal);
+		
+		//для лаб. 8
+		Reserve res2= new Reserve("No Name", 0, 0, 100, w0); //объект заповедника с массивом объектов работников
+		res1.Read();
+		res1.Display();
+		Reserve.sravn_kolvow(res1, res2);
+		Reserve.set_nalog(0.05);
+		System.out.println("New tax is "+Reserve.get_nalog()+"\n");
+		
 		
 		String search = new String();
 		System.out.printf("\nInput name, surname of worker\nwhat would you like to found: ");

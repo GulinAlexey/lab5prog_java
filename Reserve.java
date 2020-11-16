@@ -124,9 +124,9 @@ public class Reserve {
 		this.budget+=izm; //добавить изменение к текущему
 	}
 	
-	public void nal_otchisl(double &otchisl) //налоговые отчисления
+	public void nal_otchisl(int &otchisl) //налоговые отчисления
 	{
-		otchisl = expens * nalog;
+		otchisl = (int)( expens * nalog );
 	}
 	
 	public void found_name_surname(String names_surnames) //поиск по имени и фамилии (обработка строк)
