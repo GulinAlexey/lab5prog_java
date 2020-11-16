@@ -90,6 +90,11 @@ public class Reserve {
 		nalog=nalogi;
 	}
 	
+	public int get_kolvo() //получение значения кол-ва работников
+	{
+		return this.kolvow;
+	}
+	
 	public void Add(Reserve r1, Reserve r2) //сложение
 	{
 		Reserve rsum;
@@ -124,9 +129,10 @@ public class Reserve {
 		this.budget+=izm; //добавить изменение к текущему
 	}
 	
-	public void nal_otchisl(int &otchisl) //налоговые отчисления
+	public int nal_otchisl(int otchisl) //налоговые отчисления
 	{
 		otchisl = (int)( expens * nalog );
+		return otchisl;
 	}
 	
 	public void found_name_surname(String names_surnames) //поиск по имени и фамилии (обработка строк)
@@ -138,6 +144,7 @@ public class Reserve {
 			{
 				System.out.printf("\nWorker found.\n");
 				rez=1;
+				break;
 			}
 		}
 		if(rez==0)
@@ -150,15 +157,15 @@ public class Reserve {
 	{
 		if(r1.get_kolvo()>r2.get_kolvo())
 		{
-			System.out.printf("More workers in first reserve.\n");
+			System.out.printf("\nMore workers in first reserve.\n");
 		}
-		else if (r1.get_kolvo()==r2.get_kolvo())
+		if (r1.get_kolvo()<r2.get_kolvo())
 		{
-			System.out.printf("Counts of workers in reserves are equal.\n");
+			System.out.printf("\nMore workers in second reserve.\n");
 		}
-		else
+		if (r1.get_kolvo()==r2.get_kolvo())
 		{
-			System.out.printf("More workers in second reserve.\n");
+			System.out.printf("\nCounts of workers in reserves are equal.\n");
 		}
 	}
 }

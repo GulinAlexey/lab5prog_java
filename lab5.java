@@ -18,8 +18,9 @@ public class lab5
 		res1.BudgChange();
 		res1.Display();
 		
-		double nal; //налоговые отчисления
-		res1.nal_otchisl(nal);
+		int nal=0; //налоговые отчисления
+		nal=res1.nal_otchisl(nal);
+		System.out.println("\nTax is "+Reserve.get_nalog());
 		System.out.println("Reserve's tax deductions is " + nal);
 		
 		//для лаб. 8
@@ -28,11 +29,11 @@ public class lab5
 		res1.Display();
 		Reserve.sravn_kolvow(res1, res2);
 		Reserve.set_nalog(0.05);
-		System.out.println("New tax is "+Reserve.get_nalog()+"\n");
+		System.out.println("\nNew tax is "+Reserve.get_nalog()+"\n");
 		
 		
 		String search = new String();
-		System.out.printf("\nInput name, surname of worker\nwhat would you like to found: ");
+		System.out.printf("\nInput name, surname of worker\nwhat would you like to found in Reserve 1: ");
 		Scanner in = new Scanner(System.in);
 		search=in.nextLine();
 		res1.found_name_surname(search);
