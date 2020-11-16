@@ -25,8 +25,8 @@ public class lab5
 		
 		//для лаб. 8
 		Reserve res2= new Reserve("No Name", 0, 0, 100, w0); //объект заповедника с массивом объектов работников
-		res1.Read();
-		res1.Display();
+		res2.Read();
+		res2.Display();
 		Reserve.sravn_kolvow(res1, res2);
 		Reserve.set_nalog(0.05);
 		System.out.println("\nNew tax is "+Reserve.get_nalog()+"\n");
