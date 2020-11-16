@@ -2,12 +2,12 @@ import java.util.Scanner; //для использования функций в�
 
 public class Reserve {
 	private static final int LEN = 100; //макс. число работников заповедника
-	private static final double BLAGO = 0.1; //отчисления на благотворительность (в процентах)
 	private String title;  //название заповедника
 	private int budget=0;          //бюджет заповедника
 	private int expens=0;          //расходы
 	private int kolvow=0;         //кол-во работников в заповеднике
 	private Worker[] workers = new Worker[LEN]; //работники заповедника
+	private static double nalog=0.13; //налоговые отчисления (для лаб. 8)
 	
 	//конструктор с параметрами
 	public Reserve(String titl, int budg, int exp, int kolv, Worker[] works)
@@ -80,6 +80,16 @@ public class Reserve {
 		
 	}
 	
+	public static double get_nalog() //получение значения процента налоговых отчислений (для лаб. 8)
+	{
+		return nalog;
+	}
+
+	public static void set_nalog(double nalogi) //установление значения процента налоговых отчислений (для лаб. 8)
+	{
+		nalog=nalogi;
+	}
+	
 	public void Add(Reserve r1, Reserve r2) //сложение
 	{
 		Reserve rsum;
@@ -114,9 +124,9 @@ public class Reserve {
 		this.budget+=izm; //добавить изменение к текущему
 	}
 	
-	public void blagotvor(Blag blg) //кол-во отчислений на благотворительность
+	public void nal_otchisl(double &otchisl) //налоговые отчисления
 	{
-		blg.blaga=(int)(expens*BLAGO);
+		otchisl = expens * nalog;
 	}
 	
 	public void found_name_surname(String names_surnames) //поиск по имени и фамилии (обработка строк)
