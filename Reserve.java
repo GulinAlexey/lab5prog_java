@@ -9,7 +9,7 @@ public class Reserve {
 	private Worker[] workers = new Worker[LEN]; //работники заповедника
 	private static double nalog=0.13; //налоговые отчисления (для лаб. 8)
 	
-	//конструктор с параметрами
+	//конструктор со всеми параметрами (для лаб. 9)
 	public Reserve(String titl, int budg, int exp, int kolv, Worker[] works)
 	{
 		this.title=titl;
@@ -20,7 +20,7 @@ public class Reserve {
 			this.workers[i]=works[i];
 	}
 	
-	//конструктор с параметрами (вторая перегрузка)
+	//конструктор со всеми параметрами (для лаб. 9) (вторая перегрузка)
 	public Reserve(String titl, int budg, int exp, int kolv, Worker works)
 	{
 		this.title=titl;
@@ -31,15 +31,23 @@ public class Reserve {
 			this.workers[i]=works;
 	}
 	
-	//инициализация
-	public void Init(String titl, int budg, int exp, int kolv, Worker[] works)
+	public Reserve() //конструктор без параметров (для лаб. 9)
 	{
-		this.title=titl;
-		this.budget=budg;
-		this.expens=exp;
+		title="title";
+		budget=0;
+		expens=0;
+		kolvow=0;
+	}
+	
+	public Reserve(int kolv) //конструктор с одним параметром (для лаб. 9)
+	{
+		this.title="Заповедник";
+		this.budget=1000000;
+		this.expens=100000;
 		this.kolvow=kolv;
+		Worker w_konstr("Иван Иванов");
 		for(int i=0; i<kolv; i++)
-			this.workers[i]=works[i];
+			this.workers[i]=w_konstr;
 	}
 	
 	public void Display() //вывод
@@ -95,14 +103,14 @@ public class Reserve {
 		return this.kolvow;
 	}
 	
-	public void Add(Reserve r1, Reserve r2) //сложение
+	public static Reserve Add(Reserve r1, Reserve r2) //сложение
 	{
 		Reserve rsum;
 		rsum=r1; //переписать первую структуру в суммарную структуру
 		rsum.budget+=r2.budget; //прибавить к имеющимся числовым переменным суммарной структуры значения из второй структуры
 		rsum.expens+=r2.expens;
 		rsum.kolvow+=r2.kolvow;
-		this.Init(rsum.title, rsum.budget, rsum.expens, rsum.kolvow, rsum.workers); //вернуть итоговый объект как результат
+		return rsum; //вернуть итоговый объект как результат
 	}
 	
 	public void ZarplChange() //изменение зарплаты всех (прикладное)
