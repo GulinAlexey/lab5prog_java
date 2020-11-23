@@ -7,22 +7,35 @@ public class lab5
 		final int LEN = 100; //макс. кол-во работников заповедника
 		
 		System.out.printf("\nStart program for working with workers and reserves.\n");
-		Worker[] w0 = new Worker[LEN]; //начальные данные работника для инициализации заповедника
-		for(int i=0; i<LEN; i++)
-			w0[i] = new Worker (12345, "No Name", "No Prof", 0, 0, 0);
-		Reserve res1= new Reserve("No Name", 0, 0, 100, w0); //объект заповедника с массивом объектов работников
-		res1.Read();
-		res1.Display();
-		res1.ZarplChange();
-		res1.Display();
-		res1.BudgChange();
-		res1.Display();
 		
-		int nal=0; //налоговые отчисления
-		nal=res1.nal_otchisl(nal);
-		System.out.println("\nTax is "+Reserve.get_nalog());
-		System.out.println("Reserve's tax deductions is " + nal);
 		
+		Worker wrk11 = new Worker();
+		Worker wrk12 = new Worker("Влад Владов");
+		Worker wrk13 = new Worker(22222, "Олег Олегов", "Грибник", 150, 8000, 3);
+		System.out.printf("\nWorker: constructor with all value.\n");
+		wrk11.Display();
+		System.out.printf("\nWorker: constructor with one value.\n");
+		wrk12.Display();
+		System.out.printf("\nWorker: constructor without value.\n");
+		wrk13.Display();
+
+		Reserve res11 = new Reserve();
+		Reserve res12 = new Reserve(2);
+		Reserve res13 = new Reserve("Пруд", 2000000, 400000, 0, wrk11);
+		System.out.printf("\nReserve: constructor without value.\n");
+		res11.Display();
+		System.out.printf("\nReserve: constructor with one value.\n");
+		res12.Display();
+		System.out.printf("\nReserve: constructor with all value.\n");
+		res13.Display();
+		
+		Worker wrk2[2]= new Worker[2];
+		for(int i=0; i<2; i++)
+		{
+			wrk2[i]= new Worker("Иван Иванов"); //инициализация небольшого массива конструктором с одним параметром
+		}
+		
+		/*
 		//для лаб. 8
 		Reserve res2= new Reserve("No Name", 0, 0, 100, w0); //объект заповедника с массивом объектов работников
 		res2.Read();
@@ -37,6 +50,7 @@ public class lab5
 		Scanner in = new Scanner(System.in);
 		search=in.nextLine();
 		res1.found_name_surname(search);
+		*/
 		
 		System.out.printf("\nEnd of program...\n");
 		
