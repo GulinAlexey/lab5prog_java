@@ -8,7 +8,7 @@ public class Worker {
 	private int zarpl=0; //зарплата в месяц в рублях
 	private int progools=0; //кол-во прогулов (в днях)
 	
-	//конструктор с параметрами
+	//конструктор со всеми параметрами (для лаб. 9)
 	public Worker(int num_trud, String name_sur, String dolzhno, int hourss, int zarplat, int progoo)
 	{
 		this.num_tr=num_trud;
@@ -19,15 +19,24 @@ public class Worker {
 		this.progools=progoo;
 	}
 	
-	//инициализация
-	public void Init(int num_trud, String name_sur, String dolzhno, int hourss, int zarplat, int progoo)
+	public Worker(string name_sur) //конструктор с одним параметром (для лаб. 9)
 	{
-		this.num_tr=num_trud;
+		this.num_tr=12345;
 		this.name_surname=name_sur;
-		this.dolzh=dolzhno;
-		this.hours=hourss;
-		this.zarpl=zarplat;
-		this.progools=progoo;
+		this.dolzh="Worker";
+		this.hours=200;
+		this.zarpl=20000;
+		this.progools=0;
+	}
+	
+	public Worker() //конструктор без параметров (для лаб. 9)
+	{
+		num_tr=0;
+		name_surname="no_name";
+		dolzh="employee";
+		hours=0;
+		zarpl=0;
+		progools=0;
 	}
 	
 	//Получение и установление соответствующих полей
@@ -119,14 +128,14 @@ public class Worker {
 
 	}
 	
-	public void Add(Worker wr1, Worker wr2) //сложение
+	public static Worker Add(Worker wr1, Worker wr2) //сложение
 	{
 		Worker wrsum = new Worker(12345, "No Name", "No Prof", 0, 0, 0);
 		wrsum=wr1;
 		wrsum.hours+=wr2.hours; //прибавить к имеющимся числовым переменным суммарного объекта значения из второго объекта (кроме номера трудовой)
 		wrsum.zarpl+=wr2.zarpl;
 		wrsum.progools+=wr2.progools;
-		this.Init(wrsum.num_tr, wrsum.name_surname, wrsum.dolzh, wrsum.hours, wrsum.zarpl, wrsum.progools); //вернуть итоговый объект как результат
+		return wrsum; //вернуть итоговый объект как результат
 	}
 	
 	//обнуление прогулов (прикладное)
