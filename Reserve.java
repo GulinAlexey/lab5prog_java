@@ -41,11 +41,11 @@ public class Reserve {
 	
 	public Reserve(int kolv) //конструктор с одним параметром (для лаб. 9)
 	{
-		this.title="Заповедник";
+		this.title="Reserve";
 		this.budget=1000000;
 		this.expens=100000;
 		this.kolvow=kolv;
-		Worker w_konstr("Иван Иванов");
+		Worker w_konstr = new Worker("Ivan Ivanov");
 		for(int i=0; i<kolv; i++)
 			this.workers[i]=w_konstr;
 	}

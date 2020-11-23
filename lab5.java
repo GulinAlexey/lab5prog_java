@@ -10,18 +10,18 @@ public class lab5
 		
 		
 		Worker wrk11 = new Worker();
-		Worker wrk12 = new Worker("Влад Владов");
-		Worker wrk13 = new Worker(22222, "Олег Олегов", "Грибник", 150, 8000, 3);
-		System.out.printf("\nWorker: constructor with all value.\n");
+		Worker wrk12 = new Worker("Vlad Vladov");
+		Worker wrk13 = new Worker(22222, "Oleg Olegov", "Gribnik", 150, 8000, 3);
+		System.out.printf("\nWorker: constructor without value.\n");
 		wrk11.Display();
 		System.out.printf("\nWorker: constructor with one value.\n");
 		wrk12.Display();
-		System.out.printf("\nWorker: constructor without value.\n");
+		System.out.printf("\nWorker: constructor with all value.\n");
 		wrk13.Display();
 
 		Reserve res11 = new Reserve();
 		Reserve res12 = new Reserve(2);
-		Reserve res13 = new Reserve("Пруд", 2000000, 400000, 0, wrk11);
+		Reserve res13 = new Reserve("White Sand", 2000000, 400000, 0, wrk11);
 		System.out.printf("\nReserve: constructor without value.\n");
 		res11.Display();
 		System.out.printf("\nReserve: constructor with one value.\n");
@@ -29,10 +29,10 @@ public class lab5
 		System.out.printf("\nReserve: constructor with all value.\n");
 		res13.Display();
 		
-		Worker wrk2[2]= new Worker[2];
+		Worker[] wrk2= new Worker[2];
 		for(int i=0; i<2; i++)
 		{
-			wrk2[i]= new Worker("Иван Иванов"); //инициализация небольшого массива конструктором с одним параметром
+			wrk2[i]= new Worker("Ivan Ivanov"); //инициализация небольшого массива конструктором с одним параметром
 		}
 		
 		/*

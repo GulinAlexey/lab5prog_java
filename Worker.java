@@ -19,7 +19,7 @@ public class Worker {
 		this.progools=progoo;
 	}
 	
-	public Worker(string name_sur) //конструктор с одним параметром (для лаб. 9)
+	public Worker(String name_sur) //конструктор с одним параметром (для лаб. 9)
 	{
 		this.num_tr=12345;
 		this.name_surname=name_sur;
