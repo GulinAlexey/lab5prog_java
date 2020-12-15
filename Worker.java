@@ -1,4 +1,5 @@
 import java.util.Scanner; //для использования функций ввода
+import ex.Ex;
 
 public class Worker {
 	private int num_tr=0; //номер трудовой книжки
@@ -9,8 +10,13 @@ public class Worker {
 	private int progools=0; //кол-во прогулов (в днях)
 	
 	//конструктор со всеми параметрами (для лаб. 9)
-	public Worker(int num_trud, String name_sur, String dolzhno, int hourss, int zarplat, int progoo)
+	public Worker(int num_trud, String name_sur, String dolzhno, int hourss, int zarplat, int progoo)throws Ex
 	{
+		if(num_trud<0 || hourss<0 || zarplat<0 || progoo<0) //(для лаб. 10)
+		{
+			throw new Ex(1);
+		}
+		
 		this.num_tr=num_trud;
 		this.name_surname=name_sur;
 		this.dolzh=dolzhno;
@@ -99,21 +105,52 @@ public class Worker {
 	public void Read() //ввод
 	{
 		Scanner in = new Scanner(System.in);
-		Worker w1 = new Worker(12345, "No Name", "No Prof", 0, 0, 0);
 		System.out.printf("\nInput info about worker.\n");
-		System.out.printf("Input num of workbook: ");
-		num_tr=in.nextInt();
+		try //(для лаб. 10)
+		{
+			System.out.printf("Input num of workbook: ");
+			num_tr=in.nextInt();
+		}
+		catch(Exception e)
+		{
+			System.out.printf("This is not a number.\nPress any key.\n");
+			in.next();
+		}
 		System.out.printf("Input name and surname: ");
 		name_surname=in.nextLine();
 		name_surname=in.nextLine();
 		System.out.printf("Input dolzhnost: ");
 		dolzh=in.nextLine();
-		System.out.printf("Input work hours: ");
-		hours=in.nextInt();
-		System.out.printf("Input zarplata: ");
-		zarpl=in.nextInt();
-		System.out.printf("Input progools: ");
-		progools=in.nextInt();
+		try //(для лаб. 10)
+		{
+			System.out.printf("Input work hours: ");
+			hours=in.nextInt();
+		}
+		catch(Exception e)
+		{
+			System.out.printf("This is not a number.\nPress any key.\n");
+			in.next();
+		}
+		try //(для лаб. 10)
+		{
+			System.out.printf("Input zarplata: ");
+			zarpl=in.nextInt();
+		}
+		catch(Exception e)
+		{
+			System.out.printf("This is not a number.\nPress any key.\n");
+			in.next();
+		}
+		try //(для лаб. 10)
+		{
+			System.out.printf("Input progools: ");
+			progools=in.nextInt();
+		}
+		catch(Exception e)
+		{
+			System.out.printf("This is not a number.\nPress any key.\n");
+			in.next();
+		}
 	}
 	
 	public void Display() //вывод

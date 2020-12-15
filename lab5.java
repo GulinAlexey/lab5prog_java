@@ -2,12 +2,16 @@ import java.util.Scanner; //для использования функций в�
 
 public class lab5
 {
-	public static void main (String args[])
+	public static void main (String args[]) throws Exception
 	{
 		final int LEN = 100; //макс. кол-во работников заповедника
 		
 		System.out.printf("\nStart program for working with workers and reserves.\n");
 		
+		Worker wrk88 = new Worker(22222, "Oleg Olegov", "Gribnik", -5, 8000, 3); //(для лаб. 10)
+		Worker wrk99 = new Worker(); //(для лаб. 10)
+        wrk99.Read();
+        wrk99.Display();
 		
 		Worker wrk11 = new Worker();
 		Worker wrk12 = new Worker("Vlad Vladov");
