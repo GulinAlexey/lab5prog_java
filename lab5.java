@@ -67,9 +67,9 @@ public class lab5
 			}
 		}
 		Reserve rees = new Reserve("Opyata", 2000000, 1500000, kolvv, ar, wrk55);
-		rees.Display();
-		rees.ZarplChange();
-		rees.Display();
+		rees.Display_areas();
+        rees.ZarplChange();
+        rees.Display_areas();
 		
 		/*
 		//для лаб. 8
