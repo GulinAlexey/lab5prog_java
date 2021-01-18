@@ -157,17 +157,30 @@ public class Reserve {
 		return rsum; //вернуть итоговый объект как результат
 	}
 	
-	public void ZarplChange() //изменение зарплаты всех (прикладное)
+	public void ZarplChange() //изменение зарплаты всех работников (прикладное) //лаб 11
 	{
 		Scanner in = new Scanner(System.in);
 		System.out.printf("\nChanging zarplata of all workers\n");
 		System.out.printf("Input changes of zarplata: ");
 		int izm; //переменная с прибавкой или убавкой
 		izm=in.nextInt();
-		int n = this.kolvow; //получить кол-во работников
-		for(int i=0; i<n; i++)
+		
+		if(area==0) //если заповедник без разделения на участки
 		{
-			this.workers[i].set_z(workers[i].get_z()+izm); //добавить изменение к текущему
+			for(int i=0; i<this.kolvow; i++)
+			{
+				this.workers[i].set_z(workers[i].get_z()+izm); //добавить изменение к текущему
+			}
+		}
+		else
+		{
+			for(int i=0; i<this.area; i++) //лаб 11
+			{
+				for(int j=0; j<this.kolvow; j++)
+				{
+					this.workersa[i][j].set_z(this.workersa[i][j].get_z()+izm); //добавить изменение к текущему
+				}
+			}
 		}
 	}
 	
