@@ -7,7 +7,7 @@ public class lab5
 		final int LEN = 100; //макс. кол-во работников заповедника
 		
 		System.out.printf("\nStart program for working with workers and reserves.\n");
-		
+		Scanner in = new Scanner(System.in);
 		
 		Worker wrk11 = new Worker();
 		Worker wrk12 = new Worker("Vlad Vladov");
@@ -57,7 +57,7 @@ public class lab5
 		int ar = in.nextInt();
 		System.out.printf("Input count of workers on area: ");
 		kolvv=in.nextInt();
-		Worker wrk55 = new Worker[ar][kolvv];
+		Worker[][] wrk55 = new Worker[ar][kolvv];
 		for(int i=0; i<ar; i++)
 		{
 			for(int j=0; j<kolvv; j++)
@@ -66,7 +66,7 @@ public class lab5
 				wrk55[i][j].Read();
 			}
 		}
-		Reserve rees("Opyata", 2000000, 1500000, kolvv, ar, wrk55);
+		Reserve rees = new Reserve("Opyata", 2000000, 1500000, kolvv, ar, wrk55);
 		rees.Display();
 		rees.ZarplChange();
 		rees.Display();
