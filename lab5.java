@@ -35,6 +35,42 @@ public class lab5
 			wrk2[i]= new Worker("Ivan Ivanov"); //инициализация небольшого массива конструктором с одним параметром
 		}
 		
+		//для лаб 11
+		System.out.printf("Input count of workers: ");
+		int kolvv=in.nextInt();
+		Worker[] wr22 = new Worker[LEN];
+		for (int i=0; i<kolvv; i++)
+		{
+			wr22[i] = new Worker();
+			wr22[i].Read();
+		}
+		for (int h=0; h<kolvv; h++)
+		{
+			wr22[h].Display();
+		}
+		
+		Reserve res123 = new Reserve("Svetilo", 1000000, 500000, kolvv, wr22); //для лаб 11
+		res123.Display();
+		
+		//для лаб 11
+		System.out.printf("Input count of areas in reserve: ");
+		int ar = in.nextInt();
+		System.out.printf("Input count of workers on area: ");
+		kolvv=in.nextInt();
+		Worker wrk55 = new Worker[ar][kolvv];
+		for(int i=0; i<ar; i++)
+		{
+			for(int j=0; j<kolvv; j++)
+			{
+				wrk55[i][j] = new Worker();
+				wrk55[i][j].Read();
+			}
+		}
+		Reserve rees("Opyata", 2000000, 1500000, kolvv, ar, wrk55);
+		rees.Display();
+		rees.ZarplChange();
+		rees.Display();
+		
 		/*
 		//для лаб. 8
 		Reserve res2= new Reserve("No Name", 0, 0, 100, w0); //объект заповедника с массивом объектов работников
