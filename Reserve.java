@@ -1,15 +1,17 @@
 import java.util.Scanner; //для использования функций ввода
 
 public class Reserve {
-	private static final int LEN = 100; //макс. число работников заповедника
+	private static final int LEN = 50; //макс. число работников заповедника на одном участке и макс. кол-во участков
 	private String title;  //название заповедника
 	private int budget=0;          //бюджет заповедника
 	private int expens=0;          //расходы
-	private int kolvow=0;         //кол-во работников в заповеднике
+	private int kolvow=0;         //кол-во работников в заповеднике на одном участке
+	private int area=0; //кол-во участков в заповеднике (на каждом свои работники) //лаб 11
 	private Worker[] workers = new Worker[LEN]; //работники заповедника
+	private Worker[][] workersa = new Worker[LEN][LEN]; //работники заповедника, если несколько участков //лаб 11
 	private static double nalog=0.13; //налоговые отчисления (для лаб. 8)
 	
-	//конструктор со всеми параметрами (для лаб. 9)
+	//конструктор со всеми параметрами (для лаб. 9) (если нет разделения на участки)
 	public Reserve(String titl, int budg, int exp, int kolv, Worker[] works)
 	{
 		this.title=titl;
@@ -18,6 +20,23 @@ public class Reserve {
 		this.kolvow=kolv;
 		for(int i=0; i<kolv; i++)
 			this.workers[i]=works[i];
+	}
+	
+	//конструктор для лаб 11 (заповедник с разделением на участки)
+	public Reserve(String titl, int budg, int exp, int kolv, int areas, Worker[][] works)
+	{
+		this.title=titl;
+		this.budget=budg;
+		this.expens=exp;
+		this.kolvow=kolv;
+		this.area=areas;
+		for(int i=0; i<areas; i++)
+		{
+			for(int j=0; j<kolv; j++)
+			{
+				this.workersa[i][j]=works[i][j];
+			}
+		}
 	}
 	
 	//конструктор со всеми параметрами (для лаб. 9) (вторая перегрузка)
@@ -67,6 +86,31 @@ public class Reserve {
 			System.out.println("Work hours: " + workers[i].get_h());
 			System.out.println("Zarplata: " + workers[i].get_z());
 			System.out.println("Progools: " + workers[i].get_prog());
+		}
+	}
+	
+	public void Display_areas() //вывод по участкам //лаб 11
+	{
+		System.out.printf("\nOutput info about reserve.\n");
+		System.out.println("Title: " + title);
+		System.out.println("Budget: " + budget);
+		System.out.println("Expenses: " + expens);
+		System.out.println("Count of workers on area: " + kolvow);
+		System.out.println("Count of areas: " + area);
+		int n = this.kolvow; //получить кол-во работников
+		int na = this.area; //получить кол-во участков
+		for(int i=0; i<na; i++)
+		{
+			for(int j=0; j<n; j++)
+			{
+				System.out.printf("\nWorker %d on area %d\n", j+1, i+1);
+				System.out.println("Num of workbook: " + workersa[i][j].get_num());
+				System.out.println("Name and surname: " + workersa[i][j].get_name());
+				System.out.println("Dolzhnost: " + workersa[i][j].get_dol());
+				System.out.println("Work hours: " + workersa[i][j].get_h());
+				System.out.println("Zarplata: " + workersa[i][j].get_z());
+				System.out.println("Progools: " + workersa[i][j].get_prog());
+			}
 		}
 	}
 	
